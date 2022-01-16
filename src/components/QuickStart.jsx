@@ -1,4 +1,4 @@
-import { Card, Timeline, Typography } from "antd";
+import { Card, Timeline, Typography, Button, Form } from "antd";
 import React, { useMemo } from "react";
 import { useMoralis } from "react-moralis";
 
@@ -27,27 +27,26 @@ export default function QuickStart({ isServerInfo }) {
 
   const isInchDex = useMemo(() => (Moralis.Plugins?.oneInch ? true : false), [Moralis.Plugins?.oneInch]);
 
+  const registerDev = () => {
+
+  }
   return (
     <div style={{ display: "flex", gap: "10px" }}>
       <Card
         style={styles.card}
         title={
           <>
-            📝 <Text strong>To-Do List</Text>
+            📝 <Text strong>Developer Information</Text>
           </>
         }
       >
         <Timeline mode="left" style={styles.timeline}>
           <Timeline.Item dot="📄">
-            <Text delete style={styles.text}>
-              Clone or fork{" "}
-              <a
-                href="https://github.com/ethereum-boilerplate/ethereum-boilerplate#-quick-start"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                ethereum-boilerplate
-              </a>{" "}
+            <Text style={styles.text}>
+              Register to be a developer{" "}
+              <Button type="primary" onClick={() => registerDev()}>
+                Register
+              </Button>
             </Text>
           </Timeline.Item>
 
